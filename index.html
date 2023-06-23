@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Nav</title>
+  <style>
+    /* Styling for the navigation menu */
+    ul {
+      list-style-type: none;
+      margin: 10;
+      padding: 10;
+      width: 300px;
+      height: 300px;
+      background-color: #f1f1f1;
+    }
+
+    li a {
+      display: block;
+      color: #000;
+      padding: 8px 16px;
+      border-radius: 50px;
+      text-decoration: none;
+    }
+
+    li a:hover {
+      background-color: #5e3737;
+      transition: cubic-bezier(0.19, 1, 0.22, 1)1s;
+      color: white;
+    }
+
+    /* Styling for the content area */
+    .content {
+      margin-left: 100px;
+      padding: 10px;
+    }
+
+    
+    .content-section {
+      display: none;
+    }
+    #info{
+       color: red;
+    }
+    #info:hover{
+        transition: cubic-bezier(0.075, 0.82, 0.165, 1)1s;
+        color: black;
+    }
+    #contact{
+        line-height: 50px;
+    }
+
+    
+   
+  </style>
+  <script>
+   
+    document.addEventListener("DOMContentLoaded", function() {
+    
+      var menuLinks = document.querySelectorAll("ul li a");
+
+      var contentSections = document.querySelectorAll(".content-section");
+
+      function showContentSection(sectionId) {
+       
+        contentSections.forEach(function(section) {
+          section.style.display = "none";
+        });
+
+        var selectedSection = document.getElementById(sectionId);
+        if (selectedSection) {
+          selectedSection.style.display = "block";
+        }
+      }
+
+      menuLinks.forEach(function(link) {
+        link.addEventListener("click", function(event) {
+          
+          event.preventDefault();
+
+          var sectionId = link.getAttribute("href").substring(1);
+
+           
+          showContentSection(sectionId);
+        });
+      });
+    });
+  </script>
+</head>
+<body>
+ 
+  <ul>
+    <li><a id="space" href="#home">Home</a></li>
+    <br>
+    <li><a id="space2" href="#contact">Contact</a></li>
+    <br>
+    <li><a id="space3" href="#information">Information</a></li>
+    <br>
+    <li><a id="space4" href="#guide">Guide</a></li>
+  </ul>
+
+  <div class="content">
+    <div id="home" class="content-section">
+      <h1>Home</h1>
+      <p>Welcome to our website</p>
+    </div>
+
+    <div id="contact" class="content-section">
+      <h1>Contact</h1>
+      <p>This is My Contact deatails <br>
+
+          phone no--7828374331. <br>
+
+          Email id--vivekbisen2003vk@gmail.com <br>
+
+          linkedin url--https://www.linkedin.com/in/vivek-bisen-362612233 <br>
+
+          GitHub url--https://github.com/vivekbisen07
+                 </p>
+    </div>
+
+    <div id="information" class="content-section">
+      <h1>Information</h1>
+      <p id="info"> Hi I am <br>
+           Vivek Bisen <br>
+           I am pursuing Btech from TIT college Bhopal
+
+
+      </p>
+    </div>
+
+    <div id="guide" class="content-section">
+      <h1>Guide</h1>
+      <p>HTML (Hypertext Markup Language):
+        Learn the basics: Understand the structure of HTML documents, including tags, elements, and attributes.
+        Semantic markup: Discover the importance of using semantic HTML to enhance accessibility, search engine optimization, and overall code readability.
+        Common HTML elements: Familiarize yourself with essential elements such as headings, paragraphs, lists, links, images, and forms.
+        CSS (Cascading Style Sheets):
+        Styling elements: Explore CSS selectors, properties, and values to control the appearance of HTML elements.
+        Layout and positioning: Learn about different layout techniques like using floats, flexbox, and CSS grid to create responsive designs.
+        Responsive design: Understand the principles of responsive web design and how to use media queries to adapt your website to different screen sizes.
+        JavaScript:
+        Introduction to JavaScript: Discover the fundamentals of JavaScript, including variables, data types, operators, and control structures.
+        DOM manipulation: Learn how to interact with the Document Object Model (DOM) to dynamically modify HTML and CSS, enabling interactivity in your web pages.
+        Event handling: Understand how to respond to user actions, such as clicks and input, by adding event listeners to your HTML elements.
+        Version Control with Git:
+        Git basics: Learn the basics of version control, including initializing a Git repository, committing changes, and branching.
+        Collaboration with GitHub: Explore how to collaborate with other developers using remote repositories on platforms like GitHub, including cloning, pushing, and pulling code.
+        Frontend Frameworks and Libraries:
+        Introduction to frameworks: Get an overview of popular frontend frameworks like React, Vue.js, or Angular, and understand their benefits in building complex web applications.
+        CSS frameworks: Discover the advantages of using CSS frameworks such as Bootstrap or Tailwind CSS to streamline your styling process and create responsive designs more efficiently.
+        Performance Optimization:
+        Minification and bundling: Learn how to optimize your frontend code by reducing file sizes through minification and bundling techniques.
+        Caching and content delivery: Understand caching mechanisms and how to leverage content delivery networks (CDNs) to improve website loading speed.
+        Testing and Debugging:
+        Testing methodologies: Explore different testing approaches, including unit testing, integration testing, and end-to-end testing, to ensure the quality of your frontend code.
+        Debugging tools: Discover browser developer tools like Chrome DevTools that assist in debugging and inspecting elements, monitoring network traffic, and profiling performance.
+        Conclusion:
+        Congratulations on completing the Beginner's Guide to Frontend Development! Remember, frontend development is an ever-evolving field, so continue practicing, exploring new technologies, and staying up to date with the latest trends. With dedication and perseverance, you'll be on your way to becoming a proficient frontend developer. Happy coding!</p>
+    </div>
+  </div>
+</body>
+</html>
